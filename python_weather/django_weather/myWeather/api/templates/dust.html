@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'api/css/dust.css' %}">
+    <script type="text/javascript" src="{% static 'api/js/jquery.js' %}"></script>
+</head>
+<body>
+    <div class='wrapper'>
+
+    </div>
+    
+    <script>
+        $(function(){
+            let wrapper = $('.wrapper');
+            if( {{seoul_dust}} >= 10){
+                $("html").css("background-color", "yellowgreen")
+                wrapper.prepend("<div class='black'></div>");
+                let high = $('.black');
+                high.prepend("<img class='highicon'>")
+                $('.highicon').attr({
+                    "src": ("{% static 'api/img/danger.svg' %}")
+                })
+            }
+            else{
+            $("html").css("background-color", "blue")
+            wrapper.prepend("<div class='blue'></div>");
+            let low = $('.blue');
+            low.prepend("<img class='lowicon'>");
+            $('.lowicon').attr({
+                "src": ("{% static 'api/img/laugh.svg' %}")
+            })
+        }
+        });
+        // function a(){
+        //     console.log('{{seoul_dust}}')
+        // }
+        // $.ajax({
+        //     type: 'GET',
+        //     url:  '{% url "dust" %}',
+        //     success: (result)=>{
+        //     console.log('success');
+        //     $(function(){
+        //     let wrapper = $('.wrapper');
+        //     if( {{seoul_dust}} >= 10){
+        //         wrapper.prepend("<div class='black'></div>");
+        //     }
+        //     else
+        //     wrapper.prepend("<div class='blue'></div>");
+        //     });
+        //     setInterval(()=>{
+        //         console.log('append');
+        //         $(function(){
+        //             let wrapper = $('.wrapper');
+        //         if( {{seoul_dust}} >= 100){
+        //             wrapper.prepend("<div class='black'></div>");
+        //         }
+        //         else
+        //         wrapper.prepend("<div class='blue'></div>");
+        //         });
+        //     }, 3600000);
+        // }
+        // });
+        
+        
+
+    </script>
+</body>
+</html>

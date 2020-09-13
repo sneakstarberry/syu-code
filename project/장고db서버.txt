@@ -1,0 +1,2 @@
+key = AIzaSyAavFsg3kTxSg9WoffTCB2c5eNhHpjYyt0
+장고 db 서버 api키

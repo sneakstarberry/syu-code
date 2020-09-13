@@ -1,0 +1,1 @@
+cloud_sql_proxy.exe -instances="project-c-265108:asia-northeast1:my-camcat-sql"=tcp:8080 -credential_file=C:\Users\gihon\OneDrive\SYU_CODE\project\project-c.json

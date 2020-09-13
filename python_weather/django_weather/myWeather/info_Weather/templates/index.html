@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <script>
+        function weather_update(){
+            console.log("@@");
+            $.ajax({
+                type: "POST",
+                url: "{% url 'weather' %}",
+                data: {'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: "json",
+                // beforeSend: function () {
+                //     dataUpdateStart(); //로딩바 생성
+                // },
+                // complete: function () {
+                //     dataUpdateEnd(); //로딩바 제거
+                // },
+                success: function(res){ 
+                    alert(res.message)
+                    window.location.replace("")
+                },
+                error: function(request){ // 통신 실패시 - 로그인 페이지 리다이렉트
+                    alert("예기치 못한 5류가 발생하였습니다 :'( ")
+                    window.location.replace("")
+                },
+
+            })
+        }
+    </script>
+    <a href='javascript:weather_update();'>
+        <div class="auth_user btn_2 btn-primary">
+            데이터 자동 업데이트
+        </div>
+    </a>
+</body>
+</html>

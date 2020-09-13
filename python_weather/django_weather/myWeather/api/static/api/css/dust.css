@@ -1,0 +1,24 @@
+.black {
+    height: 100vh;
+    background-color: yellowgreen;
+}
+.blue {
+    height: 98vh;
+    background-color: blue;
+}
+
+#cover-wrapper {
+    height: 98vh;
+}
+
+.highicon {
+    margin: 0 auto;
+    display: block;
+    padding-top: 13%;
+}
+
+.lowicon {
+    margin: 0 auto;
+    display: block;
+    padding-top: 13%
+}
